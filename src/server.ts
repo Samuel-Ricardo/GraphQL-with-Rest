@@ -1,8 +1,6 @@
 import mongoose from "mongoose";
 import express, { NextFunction, Request, Response } from "express";
-import { routes } from "routes";
 import { makeExecutableSchema } from "@graphql-tools/schema";
-
 
 import resolvers from "./resolvers";
 import typeDefs from "./schemas";

@@ -1,14 +1,16 @@
+import "reflect-metadata"
+import { Request, Response } from "express";
 import { container } from "tsyringe";
 import { GetPostByUserService } from "../services/GetPostByUserService";
 
 
 class GetPostByUserController {
-  async handle(request Request, response: Response) {
+  async handle(request: Request, response: Response) {
 
     const { id } = request.params;
 
-    const getPostByUserController = container.resolve(GetPostByUserService);
-    const post = await getPostByUserService.execute(id);
+    const getPostByUserService = container.resolve(GetPostByUserService);
+    const posts = await getPostByUserService.execute(id);
     return response.json(posts);
   }
 }
