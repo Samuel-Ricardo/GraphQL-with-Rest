@@ -14,7 +14,7 @@ const userResolvers = {
   },
 
   Mutation: {
-    CreateUser(context, { input }) { return container.resolve(CreateUserService).execute(input) }
+    createUser(context, { input }) { return container.resolve(CreateUserService).execute(input) }
   },
 };
 

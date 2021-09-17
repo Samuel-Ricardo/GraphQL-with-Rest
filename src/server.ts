@@ -1,3 +1,4 @@
+import "reflect-metadata";
 import mongoose from "mongoose";
 import express, { NextFunction, Request, Response } from "express";
 import { makeExecutableSchema } from "@graphql-tools/schema";
@@ -8,7 +9,7 @@ import { routes } from "routes";
 import { graphqlHTTP } from "express-graphql";
 
 
-mongoose.connect("mongodb//localhost:27017/easy_posts", {
+mongoose.connect("mongodb://localhost:27017/easy_posts", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
@@ -24,7 +25,7 @@ const schema = makeExecutableSchema({
   typeDefs,
 });
 
-app.use("/grphql", graphqlHTTP({
+app.use("/graphql", graphqlHTTP({
     schema,
     graphiql: true,
   })

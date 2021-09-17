@@ -7,7 +7,8 @@ const routes = Router();
 const createUserController = new CreateUserController();
 const getPostsByUserController = new GetPostByUserController();
 
-routes.post("/users", createUserController.handle);
+routes.post("/users/create", createUserController.handle);
+//routes.get("/users", )
 routes.get("/posts/user/:id", getPostsByUserController.handle);
 
 export { routes };
