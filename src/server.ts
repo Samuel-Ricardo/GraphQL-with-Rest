@@ -13,4 +13,12 @@ app.use(express.json());
 
 //app.use(routes);
 
+app.use(
+  (error: Error, request: Request, response: Response, next: NextFunction) => {
+    if (error instanceof Error) return response.status(400).json(error.message);
+
+    return response.status(500).json(error);
+  }
+)
+
 app.listen(4003, () => console.log("server is Running: http://localhost:4003/"));
