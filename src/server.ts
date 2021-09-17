@@ -1,5 +1,12 @@
 import mongoose from "mongoose";
 import express, { NextFunction, Request, Response } from "express";
+import { routes } from "routes";
+import { makeExecutableSchema } from "@graphql-tools/schema";
+
+
+import resolvers from "./resolvers";
+import typeDefs from "./schemas";
+import { routes } from "routes";
 
 
 mongoose.connect("mongodb//localhost:27017/easy_posts", {
@@ -11,7 +18,14 @@ const app = express();
 
 app.use(express.json());
 
-//app.use(routes);
+app.use(routes);
+
+const schema = makeExecutableSchema({
+  resolvers,
+  typeDefs,
+});
+
+
 
 app.use(
   (error: Error, request: Request, response: Response, next: NextFunction) => {
