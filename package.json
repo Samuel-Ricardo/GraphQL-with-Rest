@@ -7,6 +7,10 @@
   "license": "MIT",
   "private": false,
 
+  "scripts": {
+    "dev": "ts-node-dev --respawn --watch 'src/**' --transpile-only --ignore-watch node_modules -r tsconfig-paths/register  src/server.ts "
+  },
+
   "devDependencies": {
     "@types/express": "^4.17.13",
     "@types/mongoose": "^5.11.97",
