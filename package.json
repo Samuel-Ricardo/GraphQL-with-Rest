@@ -1,0 +1,9 @@
+{
+  "name": "api_project",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://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@github.com/Samuel-Ricardo/GraphQL-with-Rest.git",
+  "author": "Samuel_Ricardo <samuelricardoofficial@gmail.com>",
+  "license": "MIT",
+  "private": false
+}
