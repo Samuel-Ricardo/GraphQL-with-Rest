@@ -17,7 +17,7 @@ const postResolvers = {
   Query: {
     getPostByUser(context, { idUser }) {
       const getPostByUserService = container.resolve(GetPostByUserService);
-      const posts = getPostByUserService.excute(idUser);
+      const posts = getPostByUserService.execute(idUser);
       return posts;
     },
   },
